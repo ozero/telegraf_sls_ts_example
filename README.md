@@ -17,7 +17,7 @@ Example repository for Telegraf.js + Serverless framework + AWS Lambda (Node.js 
 6. Make sure thee URL of API endpoint, that executes your Lambda function.
 
 7. Set webhook with Telegram API. Open `https://api.telegram.org/bot<BOT_TOKEN>/setWebHook?url=<API_ENDPOINT_URL>` in browser.
-  - ( API_ENDPOINT_URL looks like: `https://abcdefghijk.execute-api.<REGION-NAME>.amazonaws.com/<STAGE>/<RESOURCE>` )
+   - ( API_ENDPOINT_URL looks like: `https://abcdefghijk.execute-api.<REGION-NAME>.amazonaws.com/<STAGE>/<RESOURCE>` )
 
 8. Open Telegram app & `/start` with your bot.
 
