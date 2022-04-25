@@ -1,0 +1,14 @@
+# package directories
+node_modules
+jspm_packages
+
+# Serverless directories
+.serverless
+
+# esbuild directories
+.esbuild
+
+# 
+serverless-env-dev.yml
+serverless-env-production.yml
+tmp
