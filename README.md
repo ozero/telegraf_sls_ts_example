@@ -9,7 +9,7 @@ Example repository for Telegraf.js + Serverless framework + AWS Lambda (Node.js 
 1. Clone this repo, path will be `/path/to/project/telegraf_sls_ts_example`
 1. [Set up AWS CLI](https://docs.aws.amazon.com/ja_jp/cli/latest/userguide/getting-started-install.html). Serverless fw uses its credentials.
 1. [Set up AWS SDK layer](https://aws.amazon.com/jp/premiumsupport/knowledge-center/lambda-layer-aws-sdk-latest-version/) for Lambda funtion in `/path/to/project/aws-sdk-layer/nodejs`
-1. Install Node.js [from nodesource](https://github.com/nodesource/distributions).
+1. Install Node.js v16.x [from nodesource](https://github.com/nodesource/distributions).
 1. [Install Serverless Framework With](https://www.serverless.com/framework/docs/getting-started) `$ npm install -g serverless`
 1. Install required npm packages with `$ yarn install`
 
