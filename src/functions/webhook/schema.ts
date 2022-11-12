@@ -1,8 +1,8 @@
 export default {
-  type: "Update",
+  type: "object",
   properties: {
-    update_id: { type: 'int' },
-    message: {type: "object"},
-    update: {type: "object"},
+    update_id: { type: 'integer'},
+    message: {type: 'object'},
+    update: {type: 'object'},
   },
 } as const;

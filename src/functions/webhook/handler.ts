@@ -24,12 +24,10 @@ const webhook: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (event)
   });
   bot.command('oldschool', (ctx) => ctx.reply('Hello'));
 
-
-  //console.log(event);
   console.log(event);
   
   let body = event.body;
-  await bot.handleUpdate(body);
+  await bot.handleUpdate(body as Update);
 
   return formatJSONResponse({
     message: 'ok',
