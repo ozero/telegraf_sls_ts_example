@@ -9,6 +9,6 @@ jspm_packages
 .esbuild
 
 # 
-serverless-env-dev.json
-serverless-env-production.json
+.env.dev.json
+.env.production.json
 tmp
