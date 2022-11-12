@@ -11,7 +11,7 @@ const serverlessConfiguration: AWS = {
     stage: "${opt:stage, 'dev'}", // # dev for fallback, or "production"
     region: 'ap-northeast-1',
     profile: 'default',  
-    runtime: 'nodejs14.x',
+    runtime: 'nodejs16.x',
     architecture: 'arm64',
     apiGateway: {
       minimumCompressionSize: 1024,
@@ -20,31 +20,26 @@ const serverlessConfiguration: AWS = {
     environment: {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
       NODE_OPTIONS: '--enable-source-maps --stack-trace-limit=1000',
-      BOT_TOKEN: "${file(./serverless-env-${opt:stage, 'dev'}.json):BOT_TOKEN, ''}",
-      BOT_HOOK_PATH: "${file(./serverless-env-${opt:stage, 'dev'}.json):BOT_HOOK_PATH, ''}",  
+      BOT_TOKEN: "${file(./.env.${opt:stage, 'dev'}.json):BOT_TOKEN, ''}",
     },
+  },
+  layers: {
+    aws_sdk_node16_arm64: {
+      path: "../aws-sdk-layer/nodejs",
+      compatibleRuntimes: ['nodejs16.x'],
+      compatibleArchitectures: ['arm64']
+    } 
   },
   // import the function via paths
   functions: { webhook },
   package: { individually: true },
-  // layers: {
-  //   nodeAwsSdk: {
-  //     path: "../aws-sdk-layer/nodejs", //# required, path to layer contents on disk
-  //     compatibleRuntimes: [//# optional, a list of runtimes this layer is compatible with
-  //       'nodejs14.x'
-  //     ],
-  //     compatibleArchitectures: [ //# optional, a list of architectures this layer is compatible with
-  //       'arm64'
-  //     ]
-  //   } 
-  // },
   custom: {
     esbuild: {
       bundle: true,
       minify: false,
       sourcemap: true,
       exclude: ['aws-sdk'],
-      target: 'node14',
+      target: 'node16',
       define: { 'require.resolve': undefined },
       platform: 'node',
       concurrency: 10,
