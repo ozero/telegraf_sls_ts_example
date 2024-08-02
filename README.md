@@ -1,6 +1,6 @@
 # Telegram bot for AWS Lambda (TS)
 
-Example repository for Telegraf.js + Serverless framework + AWS Lambda (Node.js Typescript)
+Example repository for Telegraf.js + Serverless framework(v3) + AWS Lambda (Node.js Typescript)
 
 ## Setup
 
